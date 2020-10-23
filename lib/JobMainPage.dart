@@ -1,16 +1,15 @@
 
-import 'package:flutter/material.dart';
 import 'package:movieuiapp/Job.dart';
+ import 'package:flutter/material.dart';
 import './BottomBar.dart';
+ import 'JobsCategory.dart';
 
-class ServiceCategoryPage extends StatefulWidget {
-  final int selectedIndex;
-  ServiceCategoryPage(this.selectedIndex);
+class JobMainPage extends StatefulWidget {
   @override
-  _ServiceCategoryPageState createState() => _ServiceCategoryPageState();
+  _JobMainPageState createState() => _JobMainPageState();
 }
 
-class _ServiceCategoryPageState extends State<ServiceCategoryPage> {
+class _JobMainPageState extends State<JobMainPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +60,7 @@ class _ServiceCategoryPageState extends State<ServiceCategoryPage> {
             filled: true,
             contentPadding: EdgeInsets.zero,
             isDense: true,
-            hintText: "Search in "+serviceList[widget.selectedIndex]['category'],
+            hintText: "Search in Jobs",
             hintStyle: TextStyle(
               fontFamily: 'Roboto-Regular',
               fontSize: 16,
@@ -89,13 +88,18 @@ class _ServiceCategoryPageState extends State<ServiceCategoryPage> {
                   thickness: 0.2,
                   color: Color(0xFF6D6E70),
                 ),
-                itemCount: serviceList[widget.selectedIndex]['subcategory'].length,
+                itemCount: serviceList.length,
                 itemBuilder: (context, int index) {
                   return GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ServiceCategoryPage(index)));
+                    },
                     child: Container(
                       child: Text(
-                        serviceList[widget.selectedIndex]['subcategory'][index],
+                        serviceList[index]['category'],
                         style: index == 0
                             ? TextStyle(
                           fontFamily: 'Roboto-Bold',
@@ -116,3 +120,4 @@ class _ServiceCategoryPageState extends State<ServiceCategoryPage> {
     );
   }
 }
+

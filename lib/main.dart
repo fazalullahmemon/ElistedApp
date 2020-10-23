@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Jobs.dart';
-import 'JobsCategory.dart';
+import 'JobMainPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +19,7 @@ class _MyAppState extends State<MyApp> {
         floatingActionButton: DockerButton(),
         bottomNavigationBar: BottomNavBar(),
       ),*/
-      home: Jobs(),
+      home: JobMainPage(),
     );
   }
 }
