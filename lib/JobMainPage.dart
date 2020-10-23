@@ -88,7 +88,7 @@ class _JobMainPageState extends State<JobMainPage> {
                   thickness: 0.2,
                   color: Color(0xFF6D6E70),
                 ),
-                itemCount: serviceList.length,
+                itemCount: jobList.length,
                 itemBuilder: (context, int index) {
                   return GestureDetector(
                     onTap: () {
@@ -99,7 +99,7 @@ class _JobMainPageState extends State<JobMainPage> {
                     },
                     child: Container(
                       child: Text(
-                        serviceList[index]['category'],
+                        jobList[index]['category'],
                         style: index == 0
                             ? TextStyle(
                           fontFamily: 'Roboto-Bold',
