@@ -96,5 +96,4 @@ List jobList = [
       "Telecommunications",
     ]
   },
-
 ];

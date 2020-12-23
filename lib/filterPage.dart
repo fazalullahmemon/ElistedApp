@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -50,11 +49,11 @@ class _ServiceFilterDesignState extends State<ServiceFilterDesign> {
   Widget build(BuildContext context) {
     _loadNewData == true
         ? _list.fetchData(_category, _subCategory,
-        isAdPromoted: _showPromotedAdOnly,
-        price: _price.toInt(),
-        containPhotos: _showPhotosOnlyAd,
-        offerType: _offerType,
-        adLanguage: _adLanguage)
+            isAdPromoted: _showPromotedAdOnly,
+            price: _price.toInt(),
+            containPhotos: _showPhotosOnlyAd,
+            offerType: _offerType,
+            adLanguage: _adLanguage)
         : null;
     _loadNewData = false;
     return Scaffold(
@@ -343,7 +342,7 @@ class _ServiceFilterDesignState extends State<ServiceFilterDesign> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18.0),
                         border:
-                        Border.all(width: 0.5, color: Color(0xFF707070))),
+                            Border.all(width: 0.5, color: Color(0xFF707070))),
                     child: Text(
                       "0",
                       style: TextStyle(
@@ -359,7 +358,7 @@ class _ServiceFilterDesignState extends State<ServiceFilterDesign> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18.0),
                         border:
-                        Border.all(width: 0.5, color: Color(0xFF707070))),
+                            Border.all(width: 0.5, color: Color(0xFF707070))),
                     child: Text(
                       _price.truncateToDouble().toString(),
                       style: TextStyle(
@@ -566,17 +565,17 @@ class _ServiceFilterDesignState extends State<ServiceFilterDesign> {
                       ),
                       _showPhotosOnlyAd == true
                           ? Container(
-                          width: 16.0,
-                          height: 16.0,
-                          child: SvgPicture.asset('assets/checkBox.svg'))
+                              width: 16.0,
+                              height: 16.0,
+                              child: SvgPicture.asset('assets/checkBox.svg'))
                           : Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(2),
-                            border: Border.all(
-                                color: Color(0xFF6D6E70), width: 1.5)),
-                      )
+                              width: 10,
+                              height: 10,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(2),
+                                  border: Border.all(
+                                      color: Color(0xFF6D6E70), width: 1.5)),
+                            )
                     ],
                   )),
             ),
@@ -609,17 +608,17 @@ class _ServiceFilterDesignState extends State<ServiceFilterDesign> {
                       ),
                       _showPromotedAdOnly == true
                           ? Container(
-                          width: 16.0,
-                          height: 16.0,
-                          child: SvgPicture.asset('assets/checkBox.svg'))
+                              width: 16.0,
+                              height: 16.0,
+                              child: SvgPicture.asset('assets/checkBox.svg'))
                           : Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(2),
-                            border: Border.all(
-                                color: Color(0xFF6D6E70), width: 1.5)),
-                      )
+                              width: 10,
+                              height: 10,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(2),
+                                  border: Border.all(
+                                      color: Color(0xFF6D6E70), width: 1.5)),
+                            )
                     ],
                   )),
             ),
@@ -645,7 +644,7 @@ class _ServiceFilterDesignState extends State<ServiceFilterDesign> {
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintStyle:
-                    TextStyle(fontSize: 16.0, color: Color(0xFF6D6E70)),
+                        TextStyle(fontSize: 16.0, color: Color(0xFF6D6E70)),
                     hintText: "Search Keywords"),
                 onFieldSubmitted: (_) {
                   FocusScope.of(context).unfocus();

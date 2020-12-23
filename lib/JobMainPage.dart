@@ -1,8 +1,7 @@
-
 import 'package:movieuiapp/Job.dart';
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import './BottomBar.dart';
- import 'JobsCategory.dart';
+import 'JobsCategory.dart';
 
 class JobMainPage extends StatefulWidget {
   @override
@@ -10,7 +9,6 @@ class JobMainPage extends StatefulWidget {
 }
 
 class _JobMainPageState extends State<JobMainPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,43 +79,42 @@ class _JobMainPageState extends State<JobMainPage> {
     return Expanded(
       child: NotificationListener<OverscrollIndicatorNotification>(
           child: Container(
-            margin: EdgeInsets.fromLTRB(20, 29, 20, 0),
-            child: ListView.separated(
-                separatorBuilder: (context, index) => Divider(
+        margin: EdgeInsets.fromLTRB(20, 29, 20, 0),
+        child: ListView.separated(
+            separatorBuilder: (context, index) => Divider(
                   height: 45.0,
                   thickness: 0.2,
                   color: Color(0xFF6D6E70),
                 ),
-                itemCount: jobList.length,
-                itemBuilder: (context, int index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ServiceCategoryPage(index)));
-                    },
-                    child: Container(
-                      child: Text(
-                        jobList[index]['category'],
-                        style: index == 0
-                            ? TextStyle(
-                          fontFamily: 'Roboto-Bold',
-                          fontSize: 16,
-                          color: const Color(0xff1b1c1e),
-                          fontWeight: FontWeight.bold,
-                        )
-                            : TextStyle(
-                          fontFamily: 'Roboto-Regular',
-                          fontSize: 16,
-                          color: const Color(0xFF6D6E70),
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-          )),
+            itemCount: jobList.length,
+            itemBuilder: (context, int index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ServiceCategoryPage(index)));
+                },
+                child: Container(
+                  child: Text(
+                    jobList[index]['category'],
+                    style: index == 0
+                        ? TextStyle(
+                            fontFamily: 'Roboto-Bold',
+                            fontSize: 16,
+                            color: const Color(0xff1b1c1e),
+                            fontWeight: FontWeight.bold,
+                          )
+                        : TextStyle(
+                            fontFamily: 'Roboto-Regular',
+                            fontSize: 16,
+                            color: const Color(0xFF6D6E70),
+                          ),
+                  ),
+                ),
+              );
+            }),
+      )),
     );
   }
 }
-

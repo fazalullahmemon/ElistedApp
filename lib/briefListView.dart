@@ -1,4 +1,4 @@
- import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -12,10 +12,10 @@ class BriefListLayoutView extends StatelessWidget {
 
   bool retrieveData = true;
 
-  final _allServicesList = Get.put(ServicesAdList());
-
   @override
   Widget build(BuildContext context) {
+    final _allServicesList =
+        Get.put(ServicesAdList(categoryName, subCategoryName));
     retrieveData == true
         ? _allServicesList.fetchData(categoryName, subCategoryName)
         : null;
@@ -98,13 +98,13 @@ class BriefListLayoutView extends StatelessWidget {
                               Container(
                                 child: Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                       children: [
                                         SvgPicture.asset(
                                             'assets/locationIcon.svg'),
@@ -120,22 +120,22 @@ class BriefListLayoutView extends StatelessWidget {
                                     ),
                                     Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                       children: [
                                         SvgPicture.asset('assets/daysIcon.svg'),
                                         SizedBox(width: 5.6),
                                         Text(
                                           ((DateTime.now().millisecondsSinceEpoch -
-                                              _allServicesList
-                                                  .allServicesList[
-                                              index]
-                                                  .PostedOn
-                                                  .millisecondsSinceEpoch) /
-                                              (1000 * 86400))
-                                              .floor()
-                                              .toString() +
+                                                          _allServicesList
+                                                              .allServicesList[
+                                                                  index]
+                                                              .PostedOn
+                                                              .millisecondsSinceEpoch) /
+                                                      (1000 * 86400))
+                                                  .floor()
+                                                  .toString() +
                                               ' days ago',
                                           style: TextStyle(
                                               fontSize: 10,

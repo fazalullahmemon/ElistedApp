@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'DetailListView.dart';
@@ -10,8 +9,17 @@ class ServicesAdList extends StatefulWidget {
   final String categoryName;
   final String subCategoryName;
   ServicesAdList(this.categoryName, this.subCategoryName);
+
+  get allServicesList => null;
   @override
   _ServicesAdListState createState() => _ServicesAdListState();
+
+  fetchData(String categoryName, String subCategoryName,
+      {bool isAdPromoted,
+      int price,
+      bool containPhotos,
+      String offerType,
+      String adLanguage}) {}
 }
 
 class _ServicesAdListState extends State<ServicesAdList> {
@@ -25,11 +33,11 @@ class _ServicesAdListState extends State<ServicesAdList> {
           appBar: appBar(),
           body: _selectedLayout == 0
               ? DetailListViewLayout(
-              widget.categoryName, widget.subCategoryName)
+                  widget.categoryName, widget.subCategoryName)
               : (_selectedLayout == 1
-              ? gridViewLayout(widget.categoryName, widget.subCategoryName)
-              : BriefListLayoutView(
-              widget.categoryName, widget.subCategoryName))),
+                  ? gridViewLayout(widget.categoryName, widget.subCategoryName)
+                  : BriefListLayoutView(
+                      widget.categoryName, widget.subCategoryName))),
     );
   }
 
@@ -107,7 +115,7 @@ class _ServicesAdListState extends State<ServicesAdList> {
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 10.0),
                           decoration: BoxDecoration(
-                            // color: Color(0xFF1877F2),
+                              // color: Color(0xFF1877F2),
                               borderRadius: BorderRadius.circular(4.0)),
                           height: 24.0,
                           child: Row(
@@ -133,7 +141,7 @@ class _ServicesAdListState extends State<ServicesAdList> {
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 10.0),
                           decoration: BoxDecoration(
-                            // color: Color(0xFF1877F2),
+                              // color: Color(0xFF1877F2),
                               borderRadius: BorderRadius.circular(4.0)),
                           height: 24.0,
                           child: Row(
@@ -160,42 +168,42 @@ class _ServicesAdListState extends State<ServicesAdList> {
                             height: 24.0,
                             child: _selectedLayout == 0
                                 ? GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _selectedLayout = 1;
-                                });
-                              },
-                              child: SvgPicture.asset(
-                                'assets/fourDotIcon.svg',
-                                width: 16,
-                                height: 18,
-                              ),
-                            )
+                                    onTap: () {
+                                      setState(() {
+                                        _selectedLayout = 1;
+                                      });
+                                    },
+                                    child: SvgPicture.asset(
+                                      'assets/fourDotIcon.svg',
+                                      width: 16,
+                                      height: 18,
+                                    ),
+                                  )
                                 : (_selectedLayout == 1
-                                ? GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _selectedLayout = 2;
-                                });
-                              },
-                              child: SvgPicture.asset(
-                                'assets/bigViewChange.svg',
-                                width: 16.85,
-                                height: 18,
-                              ),
-                            )
-                                : GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _selectedLayout = 0;
-                                });
-                              },
-                              child: SvgPicture.asset(
-                                'assets/hamburgerMenuIcon.svg',
-                                width: 17.85,
-                                height: 13.22,
-                              ),
-                            ))),
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _selectedLayout = 2;
+                                          });
+                                        },
+                                        child: SvgPicture.asset(
+                                          'assets/bigViewChange.svg',
+                                          width: 16.85,
+                                          height: 18,
+                                        ),
+                                      )
+                                    : GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            _selectedLayout = 0;
+                                          });
+                                        },
+                                        child: SvgPicture.asset(
+                                          'assets/hamburgerMenuIcon.svg',
+                                          width: 17.85,
+                                          height: 13.22,
+                                        ),
+                                      ))),
                       ],
                     )),
               ),
@@ -214,7 +222,7 @@ class _ServicesAdListState extends State<ServicesAdList> {
                       Text(
                         'All in Services',
                         style:
-                        TextStyle(fontSize: 10, color: Color(0xFF1B1C1E)),
+                            TextStyle(fontSize: 10, color: Color(0xFF1B1C1E)),
                       ),
                       SizedBox(width: 9),
                       SvgPicture.asset('assets/arrowRightIcon.svg'),
@@ -222,7 +230,7 @@ class _ServicesAdListState extends State<ServicesAdList> {
                       Text(
                         widget.categoryName,
                         style:
-                        TextStyle(fontSize: 10, color: Color(0xFF1B1C1E)),
+                            TextStyle(fontSize: 10, color: Color(0xFF1B1C1E)),
                       ),
                       SizedBox(width: 9),
                       SvgPicture.asset('assets/arrowRightIcon.svg'),
@@ -230,7 +238,7 @@ class _ServicesAdListState extends State<ServicesAdList> {
                       Text(
                         widget.subCategoryName,
                         style:
-                        TextStyle(fontSize: 10, color: Color(0xFF1B1C1E)),
+                            TextStyle(fontSize: 10, color: Color(0xFF1B1C1E)),
                       ),
                     ],
                   )),
